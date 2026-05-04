@@ -48,12 +48,7 @@ public class GestionCoursService {
         Classe classe = classeRepository.findById(codeClasse)
                 .orElseThrow(() -> new RuntimeException("Classe non trouvée: " + codeClasse));
 
-        List<Classe> classes = utilisateur.getClasses();
-        if (classes == null) classes = new ArrayList<>();
-        if (!classes.contains(classe)) {
-            classes.add(classe);
-        }
-        utilisateur.setClasses(classes);
+        utilisateur.setClasse(classe);
         utilisateurRepository.save(utilisateur);
     }
 

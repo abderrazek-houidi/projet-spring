@@ -21,11 +21,7 @@ public class Utilisateur {
     private String nom;
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-        name = "utilisateur_classe",
-        joinColumns = @JoinColumn(name = "idUtilisateur"),
-        inverseJoinColumns = @JoinColumn(name = "codeClasse")
-    )
-    private List<Classe> classes;
+    @ManyToOne
+    @JoinColumn(name = "codeClasse")
+    private Classe classe;
 }

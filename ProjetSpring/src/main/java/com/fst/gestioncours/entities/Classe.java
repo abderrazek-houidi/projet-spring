@@ -28,7 +28,7 @@ public class Classe {
     @JsonIgnore
     private List<CoursClassroom> coursClassrooms;
 
-    @ManyToMany(mappedBy = "classes")
+    @OneToMany(mappedBy = "classe")
     @JsonIgnore
     private List<Utilisateur> utilisateurs;
 }
